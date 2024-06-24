@@ -30,7 +30,7 @@ require (
 	github.com/google/go-cmp v0.5.9
 	github.com/google/go-jsonnet v0.19.1
 	github.com/hashicorp/go-envparse v0.1.0
-	github.com/hashicorp/go-version v1.6.0
+	github.com/hashicorp/go-version v1.7.0
 	github.com/hexops/gotextdiff v1.0.3
 	github.com/itchyny/gojq v0.12.11
 	github.com/kayac/go-config v0.6.0
