@@ -61,7 +61,15 @@ func (d *App) newServiceFromTypes(ctx context.Context, in types.Service) (*Servi
 		return aws.ToString(dp.Status) == "PRIMARY"
 	})
 	if sv.isCodeDeploy() {
-		// CodeDeploy does not support ServiceConnectConfiguration and VolumeConfigurations
+		// CodeDeploy does not support
+		// - ServiceConnectConfiguration
+		// - VolumeConfigurations
+		// - DeploymentConfiguration.Alarms
+		sv.ServiceConnectConfiguration = nil
+		sv.VolumeConfigurations = nil
+		if sv.DeploymentConfiguration != nil {
+			sv.DeploymentConfiguration.Alarms = nil
+		}
 		return &sv, nil
 	}
 	if len(dps) == 0 {
