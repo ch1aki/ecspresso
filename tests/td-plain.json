@@ -51,7 +51,12 @@
       ],
       "memory": 16,
       "essential": true,
-      "volumesFrom": []
+      "volumesFrom": [],
+      "restartPolicy": {
+        "enabled": true,
+        "ignoredExitCodes": [0],
+        "restartAttemptPeriod": 60
+      }
     }
   ],
   "revision": 1,

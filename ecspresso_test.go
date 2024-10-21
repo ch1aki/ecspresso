@@ -51,6 +51,9 @@ func TestLoadTaskDefinition(t *testing.T) {
 		if td.ContainerDefinitions[0].LogConfiguration.Options["awslogs-group"] != "fargate" {
 			t.Errorf("unexpected LogConfiguration.Options got %v", td.ContainerDefinitions[0].LogConfiguration.Options)
 		}
+		if *td.ContainerDefinitions[0].RestartPolicy.Enabled != true {
+			t.Errorf("unexpected RestartPolicy.Enabled got %v", td.ContainerDefinitions[0].RestartPolicy.Enabled)
+		}
 	}
 }
 

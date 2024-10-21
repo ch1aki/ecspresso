@@ -31,4 +31,9 @@
   memory: 16,
   essential: true,
   volumesFrom: [],
+  restartPolicy: {
+    enabled: true,
+    ignoredExitCodes: [0],
+    restartAttemptPeriod: 60
+  },
 }
